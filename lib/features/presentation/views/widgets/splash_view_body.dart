@@ -19,11 +19,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
 
     animationController =
-        AnimationController(vsync: this, duration: Duration(seconds:1 ));
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
     slidingAnimation = Tween<Offset>(begin: Offset(0, 5), end: Offset.zero)
         .animate(animationController);
 
     animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -41,4 +47,3 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 }
-
