@@ -7,12 +7,11 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (contex, index) {
-            return BestSellerListViewItem();
-          }),
-    );
+    return ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: 10,
+        itemBuilder: (contex, index) {
+          return BestSellerListViewItem();
+        });
   }
 }
