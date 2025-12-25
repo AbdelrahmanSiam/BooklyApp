@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 22.0),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
@@ -27,10 +27,9 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          Expanded(child: BestSellerListView()),
+          BestSellerListView(),
         ],
       ),
     );
   }
 }
-

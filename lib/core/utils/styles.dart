@@ -12,7 +12,7 @@ abstract class Styles {
   static const textSize16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w200,
-    color: Colors.grey,
+    color: Color(0xff707070),
   );
   static const textSize30 = TextStyle(
     fontSize: 30,
