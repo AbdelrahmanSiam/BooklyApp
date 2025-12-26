@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HorizontalListViewCard extends StatelessWidget {
-  const HorizontalListViewCard({super.key});
+class CustomBookItem extends StatelessWidget {
+  const CustomBookItem({super.key, required this.image});
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +13,8 @@ class HorizontalListViewCard extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                    'https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?semt=ais_hybrid&w=740&q=80')),
+            image:
+                DecorationImage(fit: BoxFit.fill, image: NetworkImage(image)),
           ),
         ),
       ),
