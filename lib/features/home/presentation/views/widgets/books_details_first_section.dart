@@ -48,11 +48,7 @@ class BooksDetailsFirstSection extends StatelessWidget {
                   height: 37,
                 ),
                 BooksButton(),
-                Expanded(
-                  child: SizedBox(
-                    height: 37,
-                  ),
-                ),
+                
       ],
     );
   }

@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookInfoListViewItem extends StatelessWidget {
+  const BookInfoListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {

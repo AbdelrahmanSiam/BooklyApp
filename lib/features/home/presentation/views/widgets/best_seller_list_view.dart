@@ -1,5 +1,4 @@
-
-import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_info_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListView extends StatelessWidget {
@@ -11,7 +10,7 @@ class BestSellerListView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: 10,
         itemBuilder: (contex, index) {
-          return BestSellerListViewItem();
+          return BookInfoListViewItem();
         });
   }
 }
