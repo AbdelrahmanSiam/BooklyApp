@@ -18,7 +18,7 @@ class BookInfoListViewItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10.0),
         child: SizedBox(
-          height: 115,
+          height: 130,
           child: Row(
             children: [
               AspectRatio(
@@ -64,7 +64,7 @@ class BookInfoListViewItem extends StatelessWidget {
                         children: [
                           Text(
                             "19.99",
-                            style: Styles.textSize22
+                            style: Styles.textSize20
                                 .copyWith(fontWeight: FontWeight.bold),
                           ),
                           SizedBox(

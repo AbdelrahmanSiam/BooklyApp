@@ -8,14 +8,15 @@ class HorizontalListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
       child: ListView.builder(
-          itemCount: 10,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return CustomBookItem(
-              image:
-                  "https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?semt=ais_hybrid&w=740&q=80",
-            );
-          },),
+        itemCount: 10,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return CustomBookItem(
+            image:
+                "https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?semt=ais_hybrid&w=740&q=80",
+          );
+        },
+      ),
     );
   }
 }

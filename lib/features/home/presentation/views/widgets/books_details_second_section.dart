@@ -1,4 +1,3 @@
-
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_list_view.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +14,10 @@ class BooksDetailsSecondSection extends StatelessWidget {
           "You can also read",
           style: Styles.textSize22,
         ),
-                SizedBox(
-                  height: 16,
-                ),
-                BookDetailsListView(),
+        SizedBox(
+          height: 16,
+        ),
+        BookDetailsListView(),
       ],
     );
   }

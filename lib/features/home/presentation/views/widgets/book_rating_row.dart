@@ -13,14 +13,14 @@ class BookRatingRow extends StatelessWidget {
         Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.amberAccent,
-          size: 18,
+          size: 16,
         ),
         SizedBox(
-          width: 6.3,
+          width: 5,
         ),
         Text(
           "4.8",
-          style: Styles.textSize22.copyWith(fontWeight: FontWeight.w500),
+          style: Styles.textSize20.copyWith(fontWeight: FontWeight.w500),
         ),
         SizedBox(
           width: 5,

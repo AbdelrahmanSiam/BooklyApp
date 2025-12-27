@@ -38,8 +38,9 @@ class BooksButton extends StatelessWidget {
               ),
             ),
             child: Text(
+              overflow: TextOverflow.ellipsis,
               "Free preview",
-              style: Styles.textSize20.copyWith(color: Colors.white),
+              style: Styles.textSize16.copyWith(color: Colors.white),
             ),
           ),
         ],
