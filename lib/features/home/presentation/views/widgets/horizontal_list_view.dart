@@ -1,22 +1,36 @@
+import 'package:bookly/core/widgets/custom_failure_widget.dart';
+import 'package:bookly/core/widgets/custom_loading_widget.dart';
+import 'package:bookly/features/home/presentation/manager/featured_books/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HorizontalListView extends StatelessWidget {
   const HorizontalListView({super.key});
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.3,
-      child: ListView.builder(
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return CustomBookItem(
-            image:
-                "https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?semt=ais_hybrid&w=740&q=80",
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+      builder: (context, state) {
+        if (state is FeaturedBooksSuccessState) {
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * 0.3,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: state.books.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return CustomBookItem(
+                  image:state.books[index].volumeInfo?.imageLinks?.thumbnail ?? '',
+                );
+              },
+            ),
           );
-        },
-      ),
+        } else if (state is FeaturedBooksFailureState) {
+          return CustomFailureWidget(errMessage: state.errMessage);
+        } else {
+          return const CustomLoadingWidget();
+        }
+      },
     );
   }
 }
