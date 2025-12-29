@@ -9,10 +9,10 @@ sealed class FeaturedCubitState extends Equatable {
 
 final class FeaturedCubitInitial extends FeaturedCubitState {}
 
-final class FeaturedCubitSuccesState extends FeaturedCubitState {
+final class FeaturedCubitSuccessState extends FeaturedCubitState {
   // we decide what will return if succes ? List of books
   final List<BookModel> books;
-  const FeaturedCubitSuccesState({required this.books});
+  const FeaturedCubitSuccessState({required this.books});
 }
 
 final class FeaturedCubitLoadingState extends FeaturedCubitState {}
