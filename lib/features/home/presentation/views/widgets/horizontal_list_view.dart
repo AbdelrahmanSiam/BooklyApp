@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/widgets/custom_failure_widget.dart';
 import 'package:bookly/core/widgets/custom_loading_widget.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books/featured_books_cubit.dart';
@@ -20,7 +21,7 @@ class HorizontalListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return CustomBookItem(
-                  image:state.books[index].volumeInfo?.imageLinks?.thumbnail ?? '',
+                  image:state.books[index].volumeInfo?.imageLinks?.thumbnail ?? AssetsData.placeholderImage,
                 );
               },
             ),
