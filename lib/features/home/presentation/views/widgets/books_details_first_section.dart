@@ -30,6 +30,7 @@ class BooksDetailsFirstSection extends StatelessWidget {
         ),
         Text(
           bookModel.volumeInfo?.title ?? '',
+          textAlign: TextAlign.center,
           style: Styles.textSize30.copyWith(fontWeight: FontWeight.bold),
         ),
         SizedBox(

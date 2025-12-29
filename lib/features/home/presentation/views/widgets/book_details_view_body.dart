@@ -1,5 +1,6 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/widgets/custom_book_action_button.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_list_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating_row.dart';
 import 'package:bookly/features/home/presentation/views/widgets/books_button.dart';
@@ -11,8 +12,8 @@ import 'package:bookly/features/home/presentation/views/widgets/horizontal_list_
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,7 +27,9 @@ class BookDetailsViewBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: [
-                // BooksDetailsFirstSection(),
+                BooksDetailsFirstSection(
+                  bookModel: bookModel,
+                ),
                 Expanded(
                   child: SizedBox(
                     height: 50,

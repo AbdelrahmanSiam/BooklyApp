@@ -16,7 +16,7 @@ class BookInfoListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10.0),
@@ -53,6 +53,7 @@ class BookInfoListViewItem extends StatelessWidget {
                     ),
                     Text(
                       bookModel.volumeInfo?.authors?.first ?? '',
+                      textAlign: TextAlign.center,
                       style: Styles.textSize16,
                     ),
                     SizedBox(

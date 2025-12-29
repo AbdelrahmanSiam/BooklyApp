@@ -7,4 +7,6 @@ abstract class HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks();
   // we use dartz package for handling errors by using Either<L,R> one for failure fetching and the other for sucsses fetching
+  Future<Either<Failure, List<BookModel>>> fetchRelevenceBooks(
+      {required String category});
 }

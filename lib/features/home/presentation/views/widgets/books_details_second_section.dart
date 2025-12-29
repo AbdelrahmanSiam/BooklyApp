@@ -17,7 +17,8 @@ class BooksDetailsSecondSection extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        BookDetailsListView(),
+        BookDetailsListView(
+        ),
       ],
     );
   }
