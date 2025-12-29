@@ -14,6 +14,8 @@ class VolumeInfo extends Equatable {
   final int? pageCount;
   final String? printType;
   final List<String>? categories;
+  final double? averageRating;
+final int? ratingsCount;
   final String? maturityRating;
   final bool? allowAnonLogging;
   final String? contentVersion;
@@ -23,8 +25,10 @@ class VolumeInfo extends Equatable {
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
+  
 
-  const VolumeInfo({
+
+  const VolumeInfo( {
     this.title,
     this.authors,
     this.publishedDate,
@@ -42,6 +46,8 @@ class VolumeInfo extends Equatable {
     this.previewLink,
     this.infoLink,
     this.canonicalVolumeLink,
+    this.averageRating,
+     this.ratingsCount,
   });
 
   factory VolumeInfo.fromBookJson(Map<String, dynamic> json) => VolumeInfo(
@@ -59,6 +65,8 @@ class VolumeInfo extends Equatable {
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
         categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
+        averageRating: (json['averageRating'] as num?)?.toDouble(),
+ratingsCount: json['ratingsCount'] as int?,
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
         contentVersion: json['contentVersion'] as String?,
@@ -74,6 +82,8 @@ class VolumeInfo extends Equatable {
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,
         canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
+        
+
       );
 
   Map<String, dynamic> toBookJson() => {
@@ -86,6 +96,8 @@ class VolumeInfo extends Equatable {
         'pageCount': pageCount,
         'printType': printType,
         'categories': categories,
+        'averageRating': averageRating,
+'ratingsCount': ratingsCount,
         'maturityRating': maturityRating,
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
@@ -95,6 +107,8 @@ class VolumeInfo extends Equatable {
         'previewLink': previewLink,
         'infoLink': infoLink,
         'canonicalVolumeLink': canonicalVolumeLink,
+        
+
       };
 
   @override
@@ -108,6 +122,8 @@ class VolumeInfo extends Equatable {
       pageCount,
       printType,
       categories,
+      averageRating,
+ratingsCount,
       maturityRating,
       allowAnonLogging,
       contentVersion,
@@ -117,6 +133,7 @@ class VolumeInfo extends Equatable {
       previewLink,
       infoLink,
       canonicalVolumeLink,
+
     ];
   }
 }

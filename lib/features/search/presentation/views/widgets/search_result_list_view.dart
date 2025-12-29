@@ -10,7 +10,8 @@ class SearchResultListView extends StatelessWidget {
       child: ListView.builder(
           itemCount: 10,
           itemBuilder: (contex, index) {
-            return BookInfoListViewItem();
+            // return BookInfoListViewItem();
+            return Text("data");
           }),
     );
   }
