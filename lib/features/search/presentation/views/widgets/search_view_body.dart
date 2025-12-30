@@ -1,3 +1,4 @@
+import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_info_list_view_item.dart';
 import 'package:bookly/features/search/presentation/views/widgets/search_result_list_view.dart';
@@ -7,7 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(

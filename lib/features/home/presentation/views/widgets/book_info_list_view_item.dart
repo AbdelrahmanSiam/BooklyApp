@@ -63,7 +63,6 @@ class BookInfoListViewItem extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            // "€ ${bookModel.saleInfo?.saleability}",
                             'Free',
                             style: Styles.textSize20
                                 .copyWith(fontWeight: FontWeight.bold),
