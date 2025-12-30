@@ -1,5 +1,5 @@
 import 'package:bookly/core/utils/service_locator.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/features/home/data/repoes/home_repo_implementation.dart';
 import 'package:bookly/features/home/presentation/manager/cubit/relevence_cubit.dart';
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
@@ -13,7 +13,7 @@ abstract class AppRouter {
   static const kHomeView = '/homeView';
   static const kBookDetailsView = '/bookDetailsView';
   static const kSearchView = '/searchView';
-  
+
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(
