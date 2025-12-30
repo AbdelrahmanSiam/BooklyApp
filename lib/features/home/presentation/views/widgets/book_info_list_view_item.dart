@@ -29,9 +29,13 @@ class BookInfoListViewItem extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 3.1 / 4,
                   child: CachedNetworkImage(
-                      fit: BoxFit.fill,
-                      imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
-                          AssetsData.placeholderImage),
+  fit: BoxFit.fill,
+  imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
+  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+  errorWidget: (context, url, error) => Image.asset(AssetsData.placeholderImage),
+)
+
+                          
                 ),
               ),
               SizedBox(width: 30),
