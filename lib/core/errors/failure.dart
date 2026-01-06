@@ -10,7 +10,7 @@ class ServerFailure extends Failure {
   ServerFailure({required super.errorMessage});
 
   // factory constructor to check on DioError
-  factory ServerFailure.fromDioError(DioException dioException) {
+  factory ServerFailure.fromDioError(DioException dioException ) { // (e)
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure(errorMessage: "Connection timeout");

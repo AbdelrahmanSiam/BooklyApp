@@ -1,7 +1,7 @@
 import 'package:bookly/core/utils/service_locator.dart';
 import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/features/home/data/repoes/home_repo_implementation.dart';
-import 'package:bookly/features/home/presentation/manager/cubit/relevence_cubit.dart';
+import 'package:bookly/features/home/presentation/manager/relevent_books/relevence_cubit.dart';
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:bookly/features/search/data/repo/search_repo_implementaion.dart';
