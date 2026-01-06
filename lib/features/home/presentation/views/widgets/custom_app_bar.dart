@@ -26,6 +26,14 @@ class CustomAppBar extends StatelessWidget {
                 FontAwesomeIcons.magnifyingGlass,
                 size: 24,
               )),
+          IconButton(
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kFavoriteView);
+              },
+              icon: Icon(
+                Icons.favorite,
+                size: 30,
+              )),
         ],
       ),
     );

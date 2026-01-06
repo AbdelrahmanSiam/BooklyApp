@@ -20,73 +20,89 @@ class BookInfoListViewItem extends StatelessWidget {
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10.0),
-        child: SizedBox(
-          height: 130,
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: AspectRatio(
-                  aspectRatio: 3.1 / 4,
-                  child: CachedNetworkImage(
-  fit: BoxFit.fill,
-  imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
-  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
-  errorWidget: (context, url, error) => Image.asset(AssetsData.placeholderImage),
-)
-
-                          
-                ),
+        child: Stack(
+          children: [
+            SizedBox(
+              height: 130,
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: AspectRatio(
+                        aspectRatio: 3.1 / 4,
+                        child: CachedNetworkImage(
+                          fit: BoxFit.fill,
+                          imageUrl:
+                              bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
+                          placeholder: (context, url) =>
+                              Center(child: CircularProgressIndicator()),
+                          errorWidget: (context, url, error) =>
+                              Image.asset(AssetsData.placeholderImage),
+                        )),
+                  ),
+                  SizedBox(width: 30),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * .5,
+                          child: Text(
+                            bookModel.volumeInfo?.title ?? '',
+                            style: Styles.textSize20,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        Text(
+                          bookModel.volumeInfo?.authors?.first ?? '',
+                          textAlign: TextAlign.center,
+                          style: Styles.textSize16,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Text(
+                                'Free',
+                                style: Styles.textSize20
+                                    .copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Spacer(),
+                              BookRatingRow(
+                                ratingAverage:
+                                    bookModel.volumeInfo?.averageRating ?? 0.0,
+                                ratingCount:
+                                    bookModel.volumeInfo?.ratingsCount ?? 0,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(width: 30),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * .5,
-                      child: Text(
-                        bookModel.volumeInfo?.title ?? '',
-                        style: Styles.textSize20,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Text(
-                      bookModel.volumeInfo?.authors?.first ?? '',
-                      textAlign: TextAlign.center,
-                      style: Styles.textSize16,
-                    ),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Text(
-                            'Free',
-                            style: Styles.textSize20
-                                .copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Spacer(),
-                          BookRatingRow(
-                            ratingAverage: bookModel.volumeInfo?.averageRating ?? 0.0,
-                            ratingCount: bookModel.volumeInfo?.ratingsCount ?? 0,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+            Positioned(
+              top: 0,
+              right: 0,
+              child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.favorite),
+        ),
+            ),
+          ],
         ),
       ),
     );

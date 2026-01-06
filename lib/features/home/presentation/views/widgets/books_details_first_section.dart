@@ -1,10 +1,10 @@
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/models/book_model/book_model.dart';
+import 'package:bookly/features/home/presentation/views/widgets/bookItem.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating_row.dart';
 import 'package:bookly/features/home/presentation/views/widgets/books_button.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_view_app_bar.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class BooksDetailsFirstSection extends StatelessWidget {
@@ -20,7 +20,7 @@ class BooksDetailsFirstSection extends StatelessWidget {
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * .35,
-          child: CustomBookItem(
+          child: BookItem(
             image:
                 bookModel.volumeInfo?.imageLinks?.thumbnail ?? AssetsData.placeholderImage,
           ),

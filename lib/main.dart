@@ -7,8 +7,11 @@ import 'package:bookly/features/home/presentation/manager/newest_cubit/newest_cu
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox<String>(kFavoriteBox); // no type adater becaues i need for bookId only and this is string (primitve data type) not object
   setupServiceLocator();
   runApp(const BooklyApp());
 }
@@ -22,11 +25,13 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              FeaturedBooksCubit(getIt.get<HomeRepoImplementation>())..getFeaturedBooksMethod(),
+              FeaturedBooksCubit(getIt.get<HomeRepoImplementation>())
+                ..getFeaturedBooksMethod(),
         ),
         BlocProvider(
           create: (context) =>
-              NewestBooksCubit(getIt.get<HomeRepoImplementation>())..getNewestBooksMethod(),
+              NewestBooksCubit(getIt.get<HomeRepoImplementation>())
+                ..getNewestBooksMethod(),
         ),
       ],
       child: MaterialApp.router(

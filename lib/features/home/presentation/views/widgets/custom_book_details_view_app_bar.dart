@@ -16,7 +16,10 @@ class CustomBookDetailsViewAppBar extends StatelessWidget {
             icon: Icon(
               Icons.close,
             )),
-        IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined))
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.favorite),
+        ),
       ],
     );
   }

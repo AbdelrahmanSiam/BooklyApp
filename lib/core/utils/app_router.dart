@@ -1,5 +1,6 @@
 import 'package:bookly/core/utils/service_locator.dart';
 import 'package:bookly/core/models/book_model/book_model.dart';
+import 'package:bookly/features/favorite/presentation/views/favorite_view.dart';
 import 'package:bookly/features/home/data/repoes/home_repo_implementation.dart';
 import 'package:bookly/features/home/presentation/manager/relevent_books/relevence_cubit.dart';
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
@@ -15,6 +16,7 @@ abstract class AppRouter {
   static const kHomeView = '/homeView';
   static const kBookDetailsView = '/bookDetailsView';
   static const kSearchView = '/searchView';
+  static const kFavoriteView = '/favoriteView';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -39,10 +41,14 @@ abstract class AppRouter {
       GoRoute(
         path: kSearchView,
         builder: (context, state) => BlocProvider(
-          create: (context) => SearchCubit(getIt.get<SearchRepoImplementaion>()),
-          child:  SearchView(
-          ),
+          create: (context) =>
+              SearchCubit(getIt.get<SearchRepoImplementaion>()),
+          child: SearchView(),
         ),
+      ),
+      GoRoute(
+        path: kFavoriteView,
+        builder: (context, state) => const FavoriteView(),
       ),
     ],
   );
