@@ -22,6 +22,7 @@ class BookDetailsListView extends StatelessWidget {
                 return CustomBookItem(
                   image:
                       state.books[index].volumeInfo?.imageLinks?.thumbnail ?? AssetsData.placeholderImage,
+                      bookModel: state.books[index],
                 );
               },
             ),

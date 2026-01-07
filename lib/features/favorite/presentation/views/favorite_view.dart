@@ -1,3 +1,4 @@
+import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/features/favorite/presentation/views/widgets/favorite_view_body.dart';
 import 'package:flutter/material.dart';
 

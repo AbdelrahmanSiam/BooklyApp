@@ -2,9 +2,11 @@ import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/models/book_model/book_model.dart';
+import 'package:bookly/features/favorite/presentation/manager/cubit/favorite_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
@@ -97,10 +99,21 @@ class BookInfoListViewItem extends StatelessWidget {
             Positioned(
               top: 0,
               right: 0,
-              child: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.favorite),
-        ),
+              child: BlocBuilder<FavoriteCubit, FavoriteState>(
+                builder: (context, state) {
+                  bool isFav = BlocProvider.of<FavoriteCubit>(context)
+                      .isFav(bookModel.id);
+                  return isFav
+                      ? IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          ),
+                        )
+                      : Text("");
+                },
+              ),
             ),
           ],
         ),

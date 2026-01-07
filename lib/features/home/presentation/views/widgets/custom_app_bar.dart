@@ -32,6 +32,7 @@ class CustomAppBar extends StatelessWidget {
               },
               icon: Icon(
                 Icons.favorite,
+                color: Colors.red,
                 size: 30,
               )),
         ],

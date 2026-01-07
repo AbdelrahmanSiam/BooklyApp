@@ -14,15 +14,17 @@ class BooksDetailsFirstSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomBookDetailsViewAppBar(),
+        CustomBookDetailsViewAppBar(
+          bookModel: bookModel,
+        ),
         SizedBox(
           height: 30,
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * .35,
           child: BookItem(
-            image:
-                bookModel.volumeInfo?.imageLinks?.thumbnail ?? AssetsData.placeholderImage,
+            image: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                AssetsData.placeholderImage,
           ),
         ),
         SizedBox(
@@ -50,7 +52,9 @@ class BooksDetailsFirstSection extends StatelessWidget {
         SizedBox(
           height: 37,
         ),
-        BooksButton(bookModel: bookModel,),
+        BooksButton(
+          bookModel: bookModel,
+        ),
       ],
     );
   }

@@ -47,9 +47,12 @@ abstract class AppRouter {
         ),
       ),
       GoRoute(
-        path: kFavoriteView,
-        builder: (context, state) => const FavoriteView(),
-      ),
+  path: kFavoriteView,
+  builder: (context, state) {
+    return FavoriteView();
+  },
+),
+
     ],
   );
 }

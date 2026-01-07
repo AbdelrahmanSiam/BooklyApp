@@ -27,6 +27,7 @@ class HorizontalListView extends StatelessWidget {
                     GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: state.books[index]);
                   },
                   child: CustomBookItem(
+                    bookModel: state.books[index],
                     image:state.books[index].volumeInfo?.imageLinks?.thumbnail ?? AssetsData.placeholderImage,
                   ),
                 );

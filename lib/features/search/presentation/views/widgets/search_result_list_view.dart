@@ -11,35 +11,35 @@ class SearchResultListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: BlocBuilder<SearchCubit, SearchState>(
-        builder: (context, state) {
-          if (state is SearchSuccessState) {
-            if (state.searchBooks.isEmpty) {
-              return const Center(
-                child: Text('No results found'),
-              );
-            }
-
-            return ListView.builder(
-              itemCount: state.searchBooks.length,
-              itemBuilder: (context, index) {
-                return BookInfoListViewItem(
-                  bookModel: state.searchBooks[index],
-                );
-              },
+    return BlocBuilder<SearchCubit, SearchState>(
+      builder: (context, state) {
+        if (state is SearchSuccessState) {
+          if (state.searchBooks.isEmpty) {
+            return const Center(
+              child: Text('No results found'),
             );
-          } else if (state is SearchInitial) {
-            return NoSearchResult();
-          } else if (state is SearchFailureState) {
-            return CustomFailureWidget(
-              errMessage: state.errMessage,
-            );
-          } else {
-            return const CustomLoadingWidget();
           }
-        },
-      ),
+
+          return ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: state.searchBooks.length,
+            itemBuilder: (context, index) {
+              return BookInfoListViewItem(
+                bookModel: state.searchBooks[index],
+              );
+            },
+          );
+        } else if (state is SearchInitial) {
+          return NoSearchResult();
+        } else if (state is SearchFailureState) {
+          return CustomFailureWidget(
+            errMessage: state.errMessage,
+          );
+        } else {
+          return const CustomLoadingWidget();
+        }
+      },
     );
   }
 }
