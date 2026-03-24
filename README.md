@@ -65,10 +65,6 @@ lib/
     │   │   ├── datasources/   # Google Books API calls
     │   │   ├── models/        # BookModel.fromJson
     │   │   └── repos/         # Repository implementation
-    │   ├── domain/
-    │   │   ├── entities/      # BookEntity
-    │   │   ├── repos/         # Repository interface
-    │   │   └── use_cases/     # FetchFeaturedBooks, FetchNewestBooks
     │   └── presentation/
     │       ├── view_models/   # ViewModel (Cubit) ← MVVM layer
     │       └── views/         # Home, Splash screens + Widgets
@@ -86,8 +82,6 @@ lib/
 View (Widget)
     ↕  observes state
 ViewModel (Cubit)
-    ↕  calls
-UseCase
     ↕  calls
 Repository (interface)
     ↕
