@@ -19,7 +19,7 @@
 
 | Book Details | Favorite Books | Preview Book |
 |:-----------:|:--------------:|:------------:|
-| ![Details](book_details.png) | ![Favorites](favorite_books.png) | ![Preview](preview_book.png) |
+| ![Details](book_details.png) | ![Favorites](favorite_books.png) | ![Preview](review_book.png) |
 
 ---
 
